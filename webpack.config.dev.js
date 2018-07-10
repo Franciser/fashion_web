@@ -48,9 +48,9 @@ let webpackConfig = {
         options: {
           limit: 10000,
           name: 'static/img/[name].[hash:7].[ext]',
-          publicPath: 'static/img',
-          outputPath:'static/img',
-        }
+          // outputPath:'./',
+          // publicPath:"./"
+        },
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
@@ -80,6 +80,7 @@ let webpackConfig = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'less-loader'],
+          // publicPath:'./static/css'
         }),
       },
     ]
@@ -87,7 +88,7 @@ let webpackConfig = {
   plugins:[
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin({
-     filename: 'static/css/[name].[hash:7].css'
+      filename: '[name].[hash:7].css',
     }),
     //设置每一次build之前先删除dist  
     new CleanWebpackPlugin(  
@@ -130,8 +131,6 @@ if(pageConfig && Array.isArray(pageConfig)){
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
       },
       chunksSortMode: 'dependency'
     }))
