@@ -22,8 +22,8 @@ $(window).load(function(){
         var bannerArr = ['p1', 'p2', 'p3 carousel_active', 'p4', 'p5'];
         var flag = true;
         var timer = null;
-        init();
-        // autoCarousel();
+        // init();
+        autoCarousel();
 
         //给轮播容器绑定移入移出事件，显示隐藏箭头
         carousel_wrap.on('mouseover', function () {
@@ -33,6 +33,7 @@ $(window).load(function(){
         })
 
         carousel_wrap.on('mouseout', function () {
+            clearInterval(timer);
             autoCarousel();
             arrLeft.css('display', 'none')
             arrRight.css('display', 'none')
@@ -40,9 +41,10 @@ $(window).load(function(){
 
         //点击右箭头
         arrRight.on('click', function () {
+            // console.log(flag)
             if (flag === true) {
                 flag = false;
-                clearInterval(timer)
+                
                 bannerArr.unshift(bannerArr.pop());
                 init()
                 setTimeout(function () {
@@ -77,7 +79,7 @@ $(window).load(function(){
         }
 
         function init() {
-
+            
             for (var i = 0; i < carousel_item.length; i++) {
                 carousel_item.eq(i).removeClass();
                 carousel_item.eq(i).addClass("carousel_item");
