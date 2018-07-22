@@ -23,7 +23,7 @@ $(window).load(function(){
         var flag = true;
         var timer = null;
         init();
-        autoCarousel();
+        // autoCarousel();
 
         //给轮播容器绑定移入移出事件，显示隐藏箭头
         carousel_wrap.on('mouseover', function () {
