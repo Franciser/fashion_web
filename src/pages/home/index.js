@@ -288,7 +288,7 @@ $(window).load(function(){
     }
 
     function sectionThreeAnimate_fn(){
-        var wrap3_img_arr = [require("../../img/017.png")]
+        var wrap3_img_arr = [require("../../img/017.jpg")]
         var wrap3_title_arr = ['wrap_title_toBottom', 'wrap_title_letter']
         var wrap3 = $(".wrap_section_three");
         var wrap3_imgs=$('.wrap_section_three img');
@@ -331,7 +331,7 @@ $(window).load(function(){
     }
 
     function sectionFourAnimate_fn(){
-        var wrap4_img_arr = [require("../../img/03.png")]
+        var wrap4_img_arr = [require("../../img/03-1.png")]
         var wrap4_title_arr = ['wrap_title_toBottom', 'wrap_title_letter']
         var wrap4 = $(".wrap_section_four");
         var wrap4_imgs=$('.wrap_section_four img');
