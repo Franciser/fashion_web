@@ -171,7 +171,7 @@ $(window).load(function(){
 
 
     function sectionTwoAnimate_fn(){
-        
+        var wrap2_img_arr = [require("../../img/010.png"), require("../../img/08.png"), require("../../img/04.png"),require("../../img/012.png")]
         var wrap2_left_arr = ['wrap2_left_top_img', 'wrap2_left_bottom_img', 'wrap2_right_top_img', 'wrap2_right_bottom_img']
         var wrap2_left_mouse_arr = ['wrap2_left_top_img_mouse', 'wrap2_left_bottom_img_mouse', 'wrap2_right_top_img_mouse', 'wrap2_right_bottom_img_mouse']
         var wrap2_left_info_arr = ['wrap2_left_top_info', 'wrap2_left_bottom_info', 'wrap2_right_top_info', 'wrap2_right_bottom_info']
@@ -197,6 +197,7 @@ $(window).load(function(){
         var wrap2_right_bottom_info_div = wrap2_right_bottom_info.find('div')
 
         var wrap2 = $('.wrap_section_two')
+        var wrap2_imgs=$('.wrap_section_two img');
         var wrap2_left_bottom_mask = $('.wrap_section>.wrap_left .bgMask')
         var wrap2_right_right_mask = $('.wrap_section>.wrap_right .bgMask')
         var wrap2_left_bottom_mask_div = $('.wrap_section>.wrap_left .bgMask>div')
@@ -206,12 +207,16 @@ $(window).load(function(){
             var wrap2_top = wrap2.offset().top;
             var scrollTop = document.documentElement.scrollTop;
             if (scrollTop + windowHeight >= wrap2_top) {
-                setTimeout(sectionTwoAnimate, 1000)
-
+                setTimeout(sectionTwoAnimate, 200)
             }
         })
 
         function sectionTwoAnimate(){
+            for(var i=0;i<wrap2_imgs.length;i++){
+                if(wrap2_imgs.eq(i).attr('src')===""){
+                    wrap2_imgs.eq(i).attr('src',wrap2_img_arr[i] )
+                }
+            }
             wrap2_left_top_img.addClass(wrap2_left_arr[0])
             wrap2_left_bottom_img.addClass(wrap2_left_arr[1])
             wrap2_right_top_img.addClass(wrap2_left_arr[2])
@@ -225,8 +230,6 @@ $(window).load(function(){
             wrap2_title_h1.addClass(wrap2_title_arr[0])
             wrap2_title_div.addClass(wrap2_title_arr[1])
         }
-        
-
 
         wrap2_left_top_img.on('mouseover', function () {
             $(this).addClass(wrap2_left_mouse_arr[0])
@@ -282,13 +285,13 @@ $(window).load(function(){
             wrap2_right_bottom_info_div.css('width', '50px')
         })
 
-        
-
     }
 
     function sectionThreeAnimate_fn(){
+        var wrap3_img_arr = [require("../../img/017.png")]
         var wrap3_title_arr = ['wrap_title_toBottom', 'wrap_title_letter']
         var wrap3 = $(".wrap_section_three");
+        var wrap3_imgs=$('.wrap_section_three img');
         var wrap3_title_h1 = $('.wrap_section_three>.section_title>h1')
         var wrap3_title_div = $('.wrap_section_three>.section_title>div')
         var wrap3_imgBox = $('.wrap_section_three>.section_img_box')
@@ -307,12 +310,17 @@ $(window).load(function(){
             var wrap3_top = wrap3.offset().top;
             var scrollTop = document.documentElement.scrollTop;
             if (scrollTop + windowHeight >= wrap3_top) {
-                setTimeout(sectionThreeAnimate, 1000)
-
+                setTimeout(sectionThreeAnimate, 200)
             }
         })
 
         function sectionThreeAnimate() {
+            for(var i=0;i<wrap3_imgs.length;i++){
+                if(wrap3_imgs.eq(i).attr('src')===""){
+                    wrap3_imgs.eq(i).attr('src',wrap3_img_arr[i] )
+                    wrap3_imgs.eq(i).css('animation',"toShow .5s ease-in-out")
+                }
+            }
             wrap3_imgBox_img.css('transition', "1s ease-in-out")
             wrap3_imgBox_img.css('transform', 'scale(.95)')
             wrap3_imgBox_img.css('opacity', 1) 
@@ -323,8 +331,10 @@ $(window).load(function(){
     }
 
     function sectionFourAnimate_fn(){
+        var wrap4_img_arr = [require("../../img/03.png")]
         var wrap4_title_arr = ['wrap_title_toBottom', 'wrap_title_letter']
         var wrap4 = $(".wrap_section_four");
+        var wrap4_imgs=$('.wrap_section_four img');
         var wrap4_title_h1 = $('.wrap_section_four>.section_title>h1')
         var wrap4_title_div = $('.wrap_section_four>.section_title>div')
         var wrap4_imgBox = $('.wrap_section_four>.section_img_box')
@@ -343,15 +353,21 @@ $(window).load(function(){
             var wrap4_top = wrap4.offset().top;
             var scrollTop = document.documentElement.scrollTop;
             if (scrollTop + windowHeight >= wrap4_top) {
-                setTimeout(sectionFourAnimate, 1000)
+                setTimeout(sectionFourAnimate, 200)
 
             }
         })
 
         function sectionFourAnimate() {
+            for(var i=0;i<wrap4_imgs.length;i++){
+                if(wrap4_imgs.eq(i).attr('src')===""){
+                    wrap4_imgs.eq(i).attr('src',wrap4_img_arr[i] )
+                    wrap4_imgs.eq(i).css('animation',"toShow .5s ease-in-out")
+                }
+            }
             wrap4_imgBox_img.css('transition', "1s ease-in-out")
             wrap4_imgBox_img.css('transform', 'scale(.95)')
-            wrap4_imgBox_img.css('opacity', 1) 
+            // wrap4_imgBox_img.css('opacity', 1) 
             wrap4_title_h1.addClass(wrap4_title_arr[0])
             wrap4_title_div.addClass(wrap4_title_arr[1])
         }
@@ -359,10 +375,12 @@ $(window).load(function(){
     }
 
     function sectionFiveAnimate_fn(){
+        var wrap5_img_arr=[require("../../img/019.png"),require("../../img/020.png")]
         var wrap5_title_arr = ['wrap_title_toBottom', 'wrap_title_letter']
         var wrap5_title_h1 = $('.wrap_section_five>.section_title>h1')
         var wrap5_title_div = $('.wrap_section_five>.section_title>div')
         var wrap5 = $('.wrap_section_five');
+        var wrap5_imgs = $('.wrap_section_five img');
         var wrap5_left = wrap5.find('.section_img_box_left')
         var wrap5_right = wrap5.find('.section_img_box_right')
         var wrap5_left_mask = wrap5.find('.section_img_box_left .mask')
@@ -409,12 +427,18 @@ $(window).load(function(){
             var wrap5_top = wrap5.offset().top;
             var scrollTop = document.documentElement.scrollTop;
             if (scrollTop + windowHeight >= wrap5_top) {
-                setTimeout(sectionFiveAnimate, 1000)
+                setTimeout(sectionFiveAnimate, 200)
 
             }
         })
 
         function sectionFiveAnimate() {
+            for(var i=0;i<wrap5_imgs.length;i++){
+                if(wrap5_imgs.eq(i).attr('src')===""){
+                    wrap5_imgs.eq(i).attr('src',wrap5_img_arr[i] )
+                    wrap5_imgs.eq(i).css('animation',"toShow .5s ease-in-out")
+                }
+            }
             wrap5_title_h1.addClass(wrap5_title_arr[0])
             wrap5_title_div.addClass(wrap5_title_arr[1])
         }
