@@ -331,7 +331,7 @@ $(window).load(function(){
     }
 
     function sectionFourAnimate_fn(){
-        var wrap4_img_arr = [require("../../img/03-1.png")]
+        var wrap4_img_arr = [require("../../img/03.png")]
         var wrap4_title_arr = ['wrap_title_toBottom', 'wrap_title_letter']
         var wrap4 = $(".wrap_section_four");
         var wrap4_imgs=$('.wrap_section_four img');
@@ -375,7 +375,7 @@ $(window).load(function(){
     }
 
     function sectionFiveAnimate_fn(){
-        var wrap5_img_arr=[require("../../img/019.png"),require("../../img/020.png")]
+        var wrap5_img_arr=[require("../../img/019.jpg"),require("../../img/020.jpg")]
         var wrap5_title_arr = ['wrap_title_toBottom', 'wrap_title_letter']
         var wrap5_title_h1 = $('.wrap_section_five>.section_title>h1')
         var wrap5_title_div = $('.wrap_section_five>.section_title>div')
