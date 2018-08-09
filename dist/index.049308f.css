@@ -186,7 +186,7 @@ input::-webkit-input-placeholder {
   position: absolute;
   box-sizing: border-box;
   background-color: #fff;
-  box-shadow: 0 -3px 10px #cacaca;
+  box-shadow: 0 -2px 10px rgba(202, 202, 202, 0.5);
   border-bottom: 5px solid #b4a078;
   transition: opacity 0.2s ease-in-out;
   width: 100px;
@@ -799,6 +799,18 @@ input::-webkit-input-placeholder {
   letter-spacing: 40px;
   transition: 1s ease-in-out;
 }
+.wrap section:nth-of-type(5) .wrap_section .section_img_box_left .mask,
+.wrap section:nth-of-type(5) .wrap_section .section_img_box_right .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transition: opacity 0.5s ease-in-out;
+  background-image: radial-gradient(380px 160px at center, rgba(0, 0, 0, 0.7), transparent);
+  opacity: .5;
+}
 .wrap section:nth-of-type(5) .wrap_section .section_img_box_left {
   position: absolute;
   left: 0;
@@ -837,20 +849,6 @@ input::-webkit-input-placeholder {
   background-color: #fff;
   transition: 0.5s ease-in-out;
 }
-.wrap section:nth-of-type(5) .wrap_section .section_img_box_left a .mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 400px;
-  height: 100px;
-  border-radius: 50%;
-  filter: blur(40px);
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-}
 .wrap section:nth-of-type(5) .wrap_section .section_img_box_right {
   position: absolute;
   right: 0;
@@ -888,20 +886,6 @@ input::-webkit-input-placeholder {
   height: 2px;
   background-color: #fff;
   transition: 0.5s ease-in-out;
-}
-.wrap section:nth-of-type(5) .wrap_section .section_img_box_right a .mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 400px;
-  height: 100px;
-  border-radius: 50%;
-  filter: blur(40px);
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 .wrap section:nth-of-type(6) {
   width: 100%;
@@ -1076,4 +1060,4 @@ input::-webkit-input-placeholder {
   }
 }
 
-/*# sourceMappingURL=index.4abd0e7.css.map*/
+/*# sourceMappingURL=index.049308f.css.map*/

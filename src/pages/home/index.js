@@ -205,7 +205,7 @@ $(window).load(function(){
 
         $(window).on('scroll', function () {
             var wrap2_top = wrap2.offset().top;
-            var scrollTop = document.documentElement.scrollTop;
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
             if (scrollTop + windowHeight >= wrap2_top) {
                 setTimeout(sectionTwoAnimate, 200)
             }
@@ -308,7 +308,7 @@ $(window).load(function(){
 
         $(window).on('scroll', function () {
             var wrap3_top = wrap3.offset().top;
-            var scrollTop = document.documentElement.scrollTop;
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
             if (scrollTop + windowHeight >= wrap3_top) {
                 setTimeout(sectionThreeAnimate, 200)
             }
@@ -351,7 +351,7 @@ $(window).load(function(){
 
         $(window).on('scroll', function () {
             var wrap4_top = wrap4.offset().top;
-            var scrollTop = document.documentElement.scrollTop;
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
             if (scrollTop + windowHeight >= wrap4_top) {
                 setTimeout(sectionFourAnimate, 200)
 
@@ -393,31 +393,35 @@ $(window).load(function(){
         var wrap5_right_span = wrap5.find('.section_img_box_right>a>span')
 
         wrap5_left.on('mouseover', function () {
-            wrap5_left_mask.css("width",'100%');
-            wrap5_left_mask.css("height", '100%');
+            // wrap5_left_mask.css("width",'100%');
+            // wrap5_left_mask.css("height", '100%');
+            wrap5_left_mask.css("opacity", '1');
             wrap5_left_img.css('transform',"scale(1.1)")
             wrap5_left_p.css('transition', "color .5s ease-in-out")
             wrap5_left_p.css('color', "#b4a078")
             wrap5_left_span.css('background-color', "#b4a078")
         })
         wrap5_left.on('mouseout', function () {
-            wrap5_left_mask.css("width", '400px');
-            wrap5_left_mask.css("height", '100px');
+            // wrap5_left_mask.css("width", '400px');
+            // wrap5_left_mask.css("height", '100px');
+            wrap5_left_mask.css("opacity", '.5');
             wrap5_left_img.css('transform', "scale(1)")
             wrap5_left_p.css('color', "#fff")
             wrap5_left_span.css('background-color', "#fff")
         })
         wrap5_right.on('mouseover', function () {
-            wrap5_right_mask.css("width",'100%');
-            wrap5_right_mask.css("height", '100%');
+            // wrap5_right_mask.css("width",'100%');
+            // wrap5_right_mask.css("height", '100%');
+            wrap5_right_mask.css("opacity", '1');
             wrap5_right_img.css('transform',"scale(1.1)")
             wrap5_right_p.css('transition', "color .5s ease-in-out")
             wrap5_right_p.css('color', "#b4a078")
             wrap5_right_span.css('background-color', "#b4a078")
         })
         wrap5_right.on('mouseout', function () {
-            wrap5_right_mask.css("width", '400px');
-            wrap5_right_mask.css("height", '100px');
+            // wrap5_right_mask.css("width", '400px');
+            // wrap5_right_mask.css("height", '100px');
+            wrap5_right_mask.css("opacity", '.5');
             wrap5_right_img.css('transform', "scale(1)")
             wrap5_right_p.css('color', "#fff")
             wrap5_right_span.css('background-color', "#fff")
@@ -425,7 +429,7 @@ $(window).load(function(){
 
         $(window).on('scroll', function () {
             var wrap5_top = wrap5.offset().top;
-            var scrollTop = document.documentElement.scrollTop;
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
             if (scrollTop + windowHeight >= wrap5_top) {
                 setTimeout(sectionFiveAnimate, 200)
 
@@ -447,7 +451,7 @@ $(window).load(function(){
     function returnTop_fn(){
         var returnTop=$('.returnTop');
         $(window).on('scroll',function(){
-            var scrollTop = document.documentElement.scrollTop;
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
             if (scrollTop > 100) {
                 returnTop.css('opacity','.5')
             }else{
@@ -457,7 +461,7 @@ $(window).load(function(){
         
         returnTop.on('click', function () {
             clearInterval(timer)
-            var scrollTop = document.documentElement.scrollTop;
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
             var num = 0;
             num = scrollTop;
             var timer = null;
@@ -468,6 +472,7 @@ $(window).load(function(){
                         clearInterval(timer)
                     } else {
                         document.documentElement.scrollTop = num;
+                        document.body.scrollTop=num;
                     }
                 }, 10)
             }
